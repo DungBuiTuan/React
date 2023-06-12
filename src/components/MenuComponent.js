@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody,
-    CardTitle } from 'reactstrap';
+import {
+    Card, CardImg, CardImgOverlay, CardText, CardBody,
+    CardTitle
+} from 'reactstrap';
 
 class Menu extends Component {
 
@@ -13,22 +15,22 @@ class Menu extends Component {
     }
 
     onDishSelect(dish) {
-        this.setState({ selectedDish: dish});
+        this.setState({ selectedDish: dish });
     }
 
     renderDish(dish) {
         if (dish != null)
-            return(
+            return (
                 <Card>
                     <CardImg top src={dish.image} alt={dish.name} />
                     <CardBody>
-                      <CardTitle>{dish.name}</CardTitle>
-                      <CardText>{dish.description}</CardText>
+                        <CardTitle>{dish.name}</CardTitle>
+                        <CardText>{dish.description}</CardText>
                     </CardBody>
                 </Card>
             );
         else
-            return(
+            return (
                 <div></div>
             );
     }
@@ -36,15 +38,15 @@ class Menu extends Component {
     render() {
         const menu = this.props.dishes.map((dish) => {
             return (
-              <div  className="col-12 col-md-5 m-1">
-                <Card key={dish.id}
-                  onClick={() => this.onDishSelect(dish)}>
-                  <CardImg width="100%" src={dish.image} alt={dish.name} />
-                  <CardImgOverlay>
-                      <CardTitle>{dish.name}</CardTitle>
-                  </CardImgOverlay>
-                </Card>
-              </div>
+                <div className="col-12 col-md-5 m-1">
+                    <Card key={dish.id}
+                        onClick={() => this.props.onClick(dish.id)}>
+                        <CardImg width="100%" src={dish.image} alt={dish.name} />
+                        <CardImgOverlay>
+                            <CardTitle>{dish.name}</CardTitle>
+                        </CardImgOverlay>
+                    </Card>
+                </div>
             );
         });
 
@@ -54,9 +56,9 @@ class Menu extends Component {
                     {menu}
                 </div>
                 <div className="row">
-                  <div  className="col-12 col-md-5 m-1">
-                    {this.renderDish(this.state.selectedDish)}
-                  </div>
+                    <div className="col-12 col-md-5 m-1">
+                        {this.renderDish(this.state.selectedDish)}
+                    </div>
                 </div>
             </div>
         );
