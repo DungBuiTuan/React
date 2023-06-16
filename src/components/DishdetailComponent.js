@@ -12,7 +12,7 @@ function RenderDish({ dish }) {
             <Card>
                 <CardImg width="100%" src={dish.image} alt={dish.name} />
                 <CardText >
-                    <CardTitle>{dish.name}</CardTitle>
+                    <CardTitle style={{fontWeight: 'bold'}}>{dish.name}</CardTitle>
                     <CardBody>{dish.description}</CardBody>
                 </CardText>
             </Card>
@@ -28,20 +28,22 @@ function RenderComments({ comments }) {
     if (comments != null) {
         const comment = comments.map((comment) => {
             return (
+                <div className='container'>
                 <div key={comment.id}>
-                    <li key={comment.id}>
-                        <p>{comment.comment}</p>
-                        <p>-- {comment.author},
-                            &nbsp;
-                            {new Intl.DateTimeFormat('en-US',
-                                {
-                                    year: 'numeric',
-                                    month: 'short',
-                                    day: '2-digit'
-                                }).format
-                                (new Date(Date.parse(comment.date)))}
-                        </p>
-                    </li>
+                <li style={{listStyle:'none'}} key={comment.id}>
+                    <p>{comment.comment}</p>
+                    <p>-- {comment.author},
+                        &nbsp;
+                        {new Intl.DateTimeFormat('en-US',
+                            {
+                                year: 'numeric',
+                                month: 'short',
+                                day: '2-digit'
+                            }).format
+                            (new Date(Date.parse(comment.date)))}
+                    </p>
+                </li>
+            </div>
                 </div>
             );
         });
