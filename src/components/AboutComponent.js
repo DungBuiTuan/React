@@ -29,7 +29,7 @@ function About(props) {
 
     return(
         <div className="container">
-            <div className="row">
+            <div className="row" >
                 <Breadcrumb>
                     <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                     <BreadcrumbItem active>About Us</BreadcrumbItem>

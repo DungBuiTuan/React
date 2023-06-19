@@ -52,15 +52,15 @@ class Header extends Component {
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse className='justify-content-between' isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
-                            <NavbarBrand className="
+                                <NavbarBrand className="
                             mr-auto" href="/">
-                                        <img
-                                            src="assets/images/images/logo.png"
-                                            height="30"
-                                            width="41"
-                                            alt="Ristorante Con Fusion"
-                                        />
-                                    </NavbarBrand>
+                                    <img
+                                        src="assets/images/images/logo.png"
+                                        height="30"
+                                        width="41"
+                                        alt="Ristorante Con Fusion"
+                                    />
+                                </NavbarBrand>
                                 <NavItem>
                                     <NavLink className="nav-link" to='/home'><span className="fa fa-home fa-lg"></span> Home</NavLink>
                                 </NavItem>
@@ -75,10 +75,10 @@ class Header extends Component {
                                 </NavItem>
                             </Nav>
                             <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <Button outline onClick={this.toggleModal}><span className="fa fa-sign-in fa-lg"></span> Login</Button>
-                            </NavItem>
-                        </Nav>
+                                <NavItem>
+                                    <Button outline onClick={this.toggleModal}><span className="fa fa-sign-in fa-lg"></span> Login</Button>
+                                </NavItem>
+                            </Nav>
                         </Collapse>
                     </Container>
                 </Navbar>
@@ -107,7 +107,7 @@ class Header extends Component {
                         </Form>
                     </ModalBody>
                 </Modal>
-                <div className='jumbotron'>
+                <div className='jumbotron' style={{ background: '#9575CD' }}>
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
