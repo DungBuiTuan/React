@@ -44,14 +44,15 @@ function RenderCard({item, isLoading, errMess}) {
         );
     }
 
+                    // <RenderMenuItem dish={dish} onClick={props.onClick}/> below line 54
+                    // <RenderCard item={props.dish} isLoading={props.dishesLoading} errMess={props.dishesErrMess}/>
 
     const Menu = (props) => {
 
-        const menu = props.dishes.map((dish) => {
+        const menu = props.dishes.dishes.map((dish) => {
             return (
                 <div className="col-12 col-md-6"  key={dish.id}>
-                    <RenderMenuItem dish={dish} onClick={props.onClick} />
-                    <RenderCard item={props.dish} isLoading={props.dishesLoading} errMess={props.dishesErrMess}  />
+                    <RenderMenuItem dish={dish} />
                 </div>
                 
             );
